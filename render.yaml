@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: instagram-auto-reply
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: META_VERIFY_TOKEN
+        sync: false
+      - key: META_APP_SECRET
+        sync: false
+      - key: IG_ACCESS_TOKEN
+        sync: false
+      - key: META_API_VERSION
+        value: v26.0
+      - key: COMMENT_KEYWORD
+        value: کانفیگ
+      - key: DM_TEXT
+        value: سلام 👋\nپیام شما دریافت شد.
+      - key: PUBLIC_REPLY
+        value: ''
